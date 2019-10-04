@@ -1,0 +1,25 @@
+{
+    "name": "chatette-vscode",
+    "displayName": "Chatette VSCode",
+    "description": "Syntax highlighting for Chatette files",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "",
+            "aliases": ["", ""],
+            "extensions": [".chat"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "",
+            "scopeName": "source.chat",
+            "path": "./syntaxes/.tmLanguage.json"
+        }]
+    }
+}
