@@ -1,7 +1,7 @@
 {
     "name": "chatette-vscode",
-    "displayName": "Chatette VSCode",
-    "description": "Syntax highlighting for Chatette files",
+    "displayName": "Chatette Rasa",
+    "description": "Syntax highlighting for chatette dataset of Rasa",
     "publisher": "cendekia",
     "repository": {
         "type": "git",
