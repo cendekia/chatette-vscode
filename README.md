@@ -1,6 +1,6 @@
-# chatette-vscode
+# Chatette Rasa
 
-Language highlighting for Chatette files
+Language highlighting for chatette dataset of Rasa
 
 ## Release Notes
 
