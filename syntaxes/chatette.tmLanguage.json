@@ -1,0 +1,145 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Chatette",
+	"patterns": [
+		{
+			"include": "#imports"
+		},
+		{
+			"include": "#entities"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"imports": {
+			"patterns": [
+				{
+					"comment": "Inclusion of another file",
+					"name": "invalid",
+					"match": "^\\|((.*)?(\/)([^\/]+)\/?|(.*))$",
+					"captures": {
+						"1": {
+							"name": "support.class"
+						},
+						"2": {
+							"name": "variable"
+						}
+					}
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"comment": "Intent with/out declarations",
+					"name": "entity.name.type",
+					"match": "^%\\[(&|).*?\\](\\(\\s*('.+?'|\".+?\")\\s*:\\s*('.+?'|\".+?\")\\s*(,\\s*('.+?'|\".+?\")\\s*:\\s*('.+?'|\".+?\")\\s*)*\\)|\\(.*?\\))?",
+					"captures": {
+						"1": {
+							"name": "keyword.control"
+						},
+						"2": {
+							"name": "string"
+						},
+						"3": {
+							"name": "variable"
+						},
+						"4": {
+							"name": "string"
+						},
+						"6": {
+							"name": "variable"
+						},
+						"7": {
+							"name": "string"
+						}
+					}
+				},
+				{
+					"comment": "Alias definition with/out sub-rules",
+					"name": "entity.other.attribute-name",
+					"match": "~\\[.*?(\\?)?\\]",
+					"captures": {
+						"1": {
+							"name": "keyword.control"
+						}
+					}
+				}, {
+					"comment": "Alias definition with/out declarations",
+					"name": "entity.other.attribute-name",
+					"match": "~\\[.*?(#.+?)?\\]",
+					"captures": {
+						"1": {
+							"name": "entity.other.attribute-name"
+						}
+					}
+				}, {
+					"comment": "Slot definition",
+					"name": "entity.name.tag",
+					"match": "^@\\[.*?(#.+?)?\\](\\(\\s*('.+?'|\".+?\")\\s*:\\s*('.+?'|\".+?\")\\s*(,\\s*('.+?'|\".+?\")\\s*:\\s*('.+?'|\".+?\")\\s*)*\\))?",
+					"captures": {
+						"1": {
+							"name": "entity.other.attribute-name"
+						},
+						"3": {
+							"name": "variable"
+						},
+						"4": {
+							"name": "string"
+						},
+						"6": {
+							"name": "variable"
+						},
+						"7": {
+							"name": "string"
+						}
+					}
+				}, {
+					"comment": "Slot",
+					"name": "entity.name.tag",
+					"match": "@\\[(.*?)(#.+?)?(\\?|)\\]",
+					"captures": {
+						"2": {
+							"name": "support.class"
+						},
+						"3": {
+							"name": "keyword.control"
+						}
+					}
+				},
+				{
+					"comment": "Synonim",
+					"name": "entity.name.function",
+					"match": "\\{(.*?)(\\?|)\\}",
+					"captures": {
+						"1": {
+							"name": "markup.italic"
+						},
+						"2": {
+							"name": "keyword.control"
+						}
+					}
+				},
+				{
+					"comment": "Choices",
+					"name": "entity.name.function",
+					"match": "\\[(.*?)(\\?|)\\]",
+					"captures": {
+						"2": {
+							"name": "keyword.control"
+						}
+					}
+				}
+			]
+		},
+		"comments": {
+			"begin": "^(//)",
+			"end": "\\n",
+			"name": "comment",
+			"patterns": []
+		}
+	},
+	"scopeName": "source.chat"
+}

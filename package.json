@@ -2,6 +2,11 @@
     "name": "chatette-vscode",
     "displayName": "Chatette VSCode",
     "description": "Syntax highlighting for Chatette files",
+    "publisher": "cendekia",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cendekia/chatette-vscode.git"
+    },
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.38.0"
@@ -9,17 +14,18 @@
     "categories": [
         "Programming Languages"
     ],
+    "license": "MIT",
     "contributes": {
         "languages": [{
-            "id": "",
-            "aliases": ["", ""],
-            "extensions": [".chat"],
+            "id": "chatette",
+            "aliases": ["Chatette", "chatette"],
+            "extensions": [".chatette"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "",
-            "scopeName": "source.chat",
-            "path": "./syntaxes/.tmLanguage.json"
+            "language": "chatette",
+            "scopeName": "source.chatette",
+            "path": "./syntaxes/chatette.tmLanguage.json"
         }]
     }
 }
